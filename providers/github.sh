@@ -17,6 +17,12 @@ echo "Deploying to ${REPOSITORY} on branch ${BRANCH}"
 echo "Deploying to https://${ACTOR}:${TOKEN}@github.com/${REPOSITORY}.git"
 
 REMOTE_REPO="https://${ACTOR}:${TOKEN}@github.com/${REPOSITORY}.git" && \
+branches:
+----trunk
+=======
+  git config --global http.postBuffer 524288000 &&\
+  #git config --global http.version HTTP/1 &&\
+-------branches: '-'[' mainbranch' ']'
   git init && \
   git config user.name "${ACTOR}" && \
   git config user.email "${ACTOR}@users.noreply.github.com" && \
